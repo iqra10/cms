@@ -1,4 +1,4 @@
-<?php include 'admin_includes/db.php' ?>
+<?php include './../includes/db.php' ?>
 <?php session_start(); ?>
 <?php ob_start(); ?>
 

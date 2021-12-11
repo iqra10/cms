@@ -1,5 +1,7 @@
 <!--- header--->
-<?php include 'admin_includes/db.php' ?>
+<?php 
+//include 'admin_includes/db.php' 
+?>
 <?php include 'admin_includes/header.php' ?>
 
 

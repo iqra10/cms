@@ -44,7 +44,7 @@ while($row = mysqli_fetch_array($select_all_query)) {
       <h5 class="title"><?php echo $title; ?></h5>
   </div>
     
-  <img height="350px"  src="images/<?php echo $img; ?>" class="card-img-top" alt="..." />
+  <img src="images/<?php echo $img; ?>" class="card-img-top" alt="..." />
     
   <div class="title-user">
       <a style='text-decoration: none;' href='user.php?f_user=<?php echo $user; ?>'><h6 class="title-user"><?php echo $user; ?></h6></a>

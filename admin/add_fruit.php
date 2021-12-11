@@ -1,5 +1,4 @@
 <!--- header--->
-<?php include 'admin_includes/db.php' ?>
 <?php include 'admin_includes/header.php' ?>
 
 
@@ -21,24 +20,24 @@ if(isset($_POST['add_fruit'])) {
     $user = $_POST['user'];
     $image = $_FILES['image']['name'];
     $image_temp = $_FILES['image']['tmp_name'];
+		
+	move_uploaded_file($image_temp, "./../images/$image" ); 
+		
+	if(empty($title) && empty($user) && empty($image) ) {
+		
+		echo "<p class='success'>Fields should not be empty.</p>";
     
-move_uploaded_file($image_temp, "images_admin/$image" ); 
-    
-if(empty($title) && empty($user) && empty($image) ) {
-    
-echo "<p class='success'>Fields should not be empty.</p>";
-    
-} else {
-    
- $query = "INSERT INTO fruits(title, user, img)";   
+	} else {
+		
+	 $query = "INSERT INTO fruits(title, user, img)";   
 
- $query .= "VALUES('{$title}', '{$user}','{$image}')";
-    
- $add_query = mysqli_query($connection, $query);   
-    
-echo "<p class='success'>Fruit Added.</p>";
-    
-}   
+	 $query .= "VALUES('{$title}', '{$user}','{$image}')";
+		
+	 $add_query = mysqli_query($connection, $query);   
+		
+	echo "<p class='success'>Fruit Added.</p>";
+		
+	}   
 
 }
     
